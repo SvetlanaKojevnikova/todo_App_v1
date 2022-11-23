@@ -1,4 +1,12 @@
-function Todo({ todo }) {
-  return <h2>{todo}</h2>;
+import { RiTodoFill } from "react-icons/ri";
+import styles from "./Todo.module.css";
+
+function Todo({ todo, index, deleteTodo }) {
+  return (
+    <div className={styles.todo} onDoubleClick={() => deleteTodo(index)}>
+      <RiTodoFill />
+      <div className={styles.todoText}>{todo}</div>
+    </div>
+  );
 }
 export default Todo;
